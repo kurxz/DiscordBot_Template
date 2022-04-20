@@ -2,7 +2,6 @@ require('dotenv').config();
 const Discord = require('discord.js');
 const bot = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MESSAGE_REACTIONS"] });
 
-
 const token = process.env.bot_token;
 
 const prefix = '%';
