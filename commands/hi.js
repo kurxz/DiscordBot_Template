@@ -3,8 +3,9 @@ module.exports = {
     description: "Hi command",
   
   execute(message, args, bot) {
-	  
-	message.reply("Hello");
+ 
+  	message.reply("Hello with Mention");
+    message.channel.send("Just a Hello")
 	
     }
 }

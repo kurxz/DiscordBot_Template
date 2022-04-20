@@ -1,6 +1,7 @@
 require('dotenv').config();
 const Discord = require('discord.js');
-const bot = new Discord.Client();
+const bot = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MESSAGE_REACTIONS"] });
+
 
 const token = process.env.bot_token;
 
@@ -31,14 +32,16 @@ bot.on('ready', () => {
 
 bot.login(token);
 
-
+/* Or if you need try messageCreate
+bot.on('messageCreate', async msg => { })
+*/
 bot.on('message', message => {
 
     if (antispam.has(message.author.id)) {
         message.reply("Wait for 10seconds");
     } else {
      
-    var args = message.content.slice(prefixo.length).split(/ +/);
+    var args = message.content.slice(prefix.length).split(/ +/);
 
     var commandName = args.shift().toLowerCase();
 
@@ -48,7 +51,7 @@ bot.on('message', message => {
 
         try {
 
-            if (message.content.startsWith(prefixo)) {
+            if (message.content.startsWith(prefix)) {
             
                 command.execute(message, args, bot);
            
