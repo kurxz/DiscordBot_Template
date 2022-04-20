@@ -1,5 +1,5 @@
 # DiscordBot_Template
-#### A simple template using DiscordJS\
+#### A simple template using DiscordJS
 #### Includes: Anti spam, A folder handler to commands, Prefix ( % ), Bot playing status, And a basic command ( %hi )
 
 ## How to use for beginners
